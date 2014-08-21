@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta charset="utf8">
+    <title>Pontos Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="gamefiles/style.min.css" type="text/css" rel="stylesheet" />
+  </head>
+
+  <body>
+
+    <div id="container">
+      <div id="game"></div>
+    </div>
+
+    <script type="text/html" id="game-info-content">
+        <p>This is a partial, crap clone of <a href="http://weplaydots.com/" target="_blank">Dots</a> (go buy it!).</p>
+        <p><a href="http://github.com/viniciuspinto/pontos">View at GitHub</a></p>
+        <hr />
+        <p>Remove as many dots as possible by connecting the ones that have the same color and are near each other.</p>
+        <p>Click and drag to connect dots, make a closed path to eliminate all dots of that color.</p>
+        <p>Select 'REMOVE ONE' and click on a dot to remove it. Once per game, select 'REMOVE COLOR' and click on a dot to remove all dots of the same color.</p>
+    </script>
+
+    <script src="gamefiles/pontos.full.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        Pontos.GameManager.load({
+          container: $('#game'),
+          filesPath: './gamefiles/',
+          fitToScreen: true,
+          minWidth: 256,
+          expandBg: true,
+          tweetText: 'I made <!score> points playing Pontos! Can you beat my score? http://viniciuspinto.github.io/pontos/',
+          moves: 30,
+          infoContent: document.getElementById('game-info-content').innerHTML
+        });
+    </script>
+
+  </body>
+
+</html>
